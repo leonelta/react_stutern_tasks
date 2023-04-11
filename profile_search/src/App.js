@@ -1,23 +1,27 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import {data} from './data.js';
 
 function App() {
-  return (
+
+  const [User, setUser] = useState("");
+  
+  return ( 
+
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <div className="search_container">
+          <input type='text' placeholder='Search by name...' className='search'/>
+      </div>
+
+      <div className="container">
+
+        <ul className="list">
+          <li className="listItem"></li>
+        </ul>
+
+      </div>
+
     </div>
   );
 }
