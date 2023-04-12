@@ -8,6 +8,8 @@ function App() {
 
   const [query, setQuery] = useState("");
 
+  const keys = ["id", "firstName", "lastName"]
+
   return ( 
 
     <div className="App">
