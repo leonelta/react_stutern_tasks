@@ -10,6 +10,13 @@ function App() {
 
   const keys = ["id", "firstName", "lastName"]
 
+  const search = (data) => {
+    return data.filter(
+      (item) => keys.some()
+    )
+
+  }
+
   return ( 
 
     <div className="App">
