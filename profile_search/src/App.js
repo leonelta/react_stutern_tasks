@@ -21,7 +21,7 @@ function App() {
 
     <div className="App">
 
-     <div classname="container">
+     <div className="container">
           <div className="search_container">
                 <input 
                   type='text' 

@@ -10,10 +10,14 @@
 .search{
   width: 100%;
   padding: 15px 35px;
-  margin: 8px 0;
+  margin: 6px 0;
   font-size: 1.2rem;
   display: inline-block;
   border: 1px solid black;
   border-radius: 4px;
   box-sizing: border-box;
+}
+
+Table{
+  margin: 2rem 10rem;
 }
