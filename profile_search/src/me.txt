@@ -1,9 +1,0 @@
-{data.map((item) => (
-          <tr key={item.id}>
-            <td>{item.picture}</td>
-            <td>{item.id}</td>
-            <td>{item.title}</td>
-            <td>{item.firstName}</td>
-            <td>{item.lastName}</td>
-          </tr>
-        ))}
