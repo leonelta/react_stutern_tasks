@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import MovieBox from './MovieBox';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const API_URL = "https://swapi.dev/api/films"
 
