@@ -1,12 +1,19 @@
 import React from 'react';
+import Card from 'react-bootstrap/Card'
+import './MovieBox.css'
 
 const MovieBox = ({title, release_date, opening_crawl}) => {
   return (
-    <div>
-      <h1>{title}</h1>  
-      <h4>{release_date}</h4>
-      <p>{opening_crawl}</p>
-    </div>
+    <Card style={{ width: '24rem' }}>
+      <Card.Body>
+        <Card.Title>{title}</Card.Title>
+        <Card.Subtitle className="mb-2 text-muted">{release_date}</Card.Subtitle>
+        <Card.Text>
+          {opening_crawl}
+        </Card.Text>
+        <Card.Link href="#">More Info</Card.Link>   
+      </Card.Body>
+    </Card>
   )
 }
 

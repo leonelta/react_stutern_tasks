@@ -27,6 +27,6 @@ body{
 
 .grid{
   display: grid;
-  margin: 4rem 17rem;
+  margin: 4rem 14rem;
   grid-template-columns: repeat(3, 1fr);
 }
