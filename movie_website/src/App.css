@@ -14,14 +14,19 @@ body{
 
 .container{
   width: 100%;
-  margin: 1rem 5rem ;
+  margin: 1rem ;
 }
 
-.titlesite{
-  color: yellow;
-  font-weignt: bold;
-  text-align: center;
-  font-size: 5rem;
+.logo{
+  fill: rgb(252, 210, 71);
+  height: 80px; 
   position: relative;
-  left: 7rem;
+  left: 35rem;
+  top: 1.5rem;
+}
+
+.grid{
+  display: grid;
+  margin: 4rem 17rem;
+  grid-template-columns: repeat(3, 1fr);
 }
