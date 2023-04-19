@@ -18,7 +18,7 @@ function App() {
   return (
     <div>  
        {movies.map((movieReq) => 
-       <MovieBox key={movieReq.id} {...movieReq}/>)}
+       <MovieBox key={movieReq.episode_id} {...movieReq}/>)}
     </div>
   )
 }

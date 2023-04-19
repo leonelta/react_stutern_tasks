@@ -1,9 +1,9 @@
 import React from 'react'
 
-const MovieBox = ({}) => {
+const MovieBox = ({title, release_date, opening_crawl}) => {
   return (
     <div>
-      Movie info
+      
     </div>
   )
 }
