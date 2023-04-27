@@ -18,7 +18,7 @@ body{
 }
 
 .logo{
-  fill: rgb(252, 210, 71);
+  fill: rgb(255, 232, 31);
   height: 80px; 
   position: relative;
   left: 35rem;
@@ -27,6 +27,6 @@ body{
 
 .grid{
   display: grid;
-  margin: 4rem 14rem;
+  margin: 4rem 10rem;
   grid-template-columns: repeat(3, 1fr);
 }

@@ -1,0 +1,31 @@
+.movie{
+    margin: 1rem;
+}
+
+.all{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.8)) , url(./download.jpg);
+    background-size: cover;
+    opacity: 1.3;
+    padding: 1rem;
+}
+
+.all:hover{
+    box-shadow: 0px 0px 8px 16px rgb(0, 150, 255, 0.2)
+}
+
+.title{
+    color: #fff;
+    font-size: 2rem !important;
+}
+
+.text{
+    color: #fff;
+}
+
+hr.line{
+    border: 1px solid red;
+}
+
+.link{
+    color: rgb(255, 232, 31);;
+}
