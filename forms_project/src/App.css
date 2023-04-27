@@ -1,0 +1,35 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #eee;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+form{
+    display: block;
+    background-color: #fff;
+    box-shadow: 1px 1px 3px 2px #ddd;
+    margin: 2rem 30rem;
+    padding: 15px 40px;
+    width: 40rem;
+}
+
+form input, textarea{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 15px;
+}
+
+.bottom{
+    border-radius: 10px;  
+    cursor: pointer;
+    border: none ;
+    color: rgb(56, 56, 247);
+    background-color: rgb(141, 238, 238);
+}
