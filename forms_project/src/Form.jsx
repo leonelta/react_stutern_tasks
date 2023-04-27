@@ -9,6 +9,12 @@ function Form() {
       subject: "",
       message: "",
     });
+
+    const handleChange = () => {
+
+    }
+
+    const handleSubmit = () => {}
     
 
     const [errorMessages, setErrorMessages] = useState([]);
@@ -16,11 +22,11 @@ function Form() {
 
   return (
     <div  className='container'>
-        <form> 
+        <form method='post' onSubmit={handleSubmit}> 
             <h1>Contact Us</h1>
             <div className="form-inputs">
               <label htmlFor="name" className="form-label">Name</label> 
-              <input type="text" name="name" id="" className="form-input" placeholder="Enter your name" />
+              <input type="text" name="name" id="" onChange={handleChange} className="form-input" placeholder="Enter your name" />
             </div>
             <div className="form-inputs">
               <label htmlFor="email" className="form-label">Email</label> 
