@@ -8,22 +8,35 @@ body{
     box-sizing: border-box;
 }
 
-form{
+h1{
+   
+    font-size: 5rem;
+    text-align: center;
+}
+
+.text{
+    color: rgb(167, 12, 12);
+}
+
+.invalid{
+    border: 1px solid rgb(153, 20, 20);
+}
+
+.form{
     display: block;
     background-color: #fff;
     box-shadow: 1px 1px 3px 2px #ddd;
     margin: 2rem 30rem;
-    padding: 15px 40px;
+    padding: 2px 60px 30px 60px;
     width: 40rem;
 }
-
-form input, textarea{
+.form-input, .form-textarea{
     display: flex;
     flex-direction: column;
     width: 100%;
     margin: 10px auto;
     padding: 10px;
-    font-size: 15px;
+    font-size: 12px;
     border: 1px solid #ddd;
     background-color: #f1f1f1;
 }
