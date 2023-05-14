@@ -1,0 +1,16 @@
+const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    fetch(API_URL).then((res) => res.json())
+    .then(data => {
+      console.log(data)
+      setMovies(data.results);
+    })
+  }, [])
+
+  
+    <div className="grid">
+      {movies.map((movieReq) => <MovieBox key={movieReq.episode_id} {...movieReq} />)}
+    </div>
+
+    const API_URL = "https://swapi.dev/api/films"

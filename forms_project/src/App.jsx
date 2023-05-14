@@ -14,16 +14,19 @@ function App() {
   } = useForm();
 
   const submitHandler = (data) => {
+    const infos = {...data}
     axios.post("https://my-json-server.typicode.com/tundeojediran/contacts-api-server/inquiries", {
-         data,
+         infos,
     })
     .then(response => {
       console.log(response);
-      reset()
+      
     })
     .catch(errors => {
       console.log(errors);
     })
+
+    reset();
   }
 
   return (

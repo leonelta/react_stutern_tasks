@@ -2,6 +2,8 @@
     margin: 1rem;
 }
 
+
+
 .all{
     background-image: linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.8)) , url(./download.jpg);
     background-size: cover;

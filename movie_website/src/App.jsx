@@ -2,11 +2,17 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import MovieBox from './MovieBox';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {
+	BrowserRouter as Router,
+	Routes,
+	Route,
+	Link
+} from 'react-router-dom';
 
-
-const API_URL = "https://swapi.dev/api/films"
+const API_URL = "https://swapi.dev/api/films";
 
 function App() {
+
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -16,9 +22,10 @@ function App() {
       setMovies(data.results);
     })
   }, [])
-
+  
   return (
-    <div className="container">  
+    <Router>
+      <div className="container">  
        <svg viewBox="0 0 1347.6 227.4" className="logo">
           <g id="Logo">
           <path className="st2" d="M788.9 54.8l8.7 25.5c4.7 13.8 8.9 24.8 9.4 24.8.6-.5 17.6-49.8 17.6-49.8h32.9l-39.7 
@@ -61,11 +68,11 @@ function App() {
           </g>
           </g>
         </svg>
-       <div className="grid">
-          {movies.map((movieReq) => 
-          <MovieBox key={movieReq.episode_id} {...movieReq}/>)}
-       </div>
-    </div>
+        <div className="grid">
+           {movies.map((movieReq) => <MovieBox key={movieReq.episode_id} {...movieReq} />)}
+        </div>
+      </div>
+    </Router>
   )
 }
 
