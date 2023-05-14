@@ -3,15 +3,17 @@ import Card from 'react-bootstrap/Card';
 import { useNavigate } from 'react-router';
 import './MovieBox.css'
 
-const API_URL = "https://swapi.dev/api/films"
 
 function MovieBox({ title, release_date, opening_crawl }) {
+
+  const API_URL = "https://swapi.dev/api/films";
 
   const navigate = useNavigate();
 
   const navigateToMovieInfo = () => {
     navigate('/MovieInfo');
   }
+
 
   return (
     <Card className="movie" style={{ width: '24rem' }}>
@@ -24,7 +26,7 @@ function MovieBox({ title, release_date, opening_crawl }) {
         <hr className='line'></hr>
         <button onClick={navigateToMovieInfo}> More infos</button>
       </Card.Body>
-    </Card>
+    </Card>    
   );
 }
 

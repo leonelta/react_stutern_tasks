@@ -13,7 +13,7 @@ function MovieInfo() {
     navigate('/MovieBox');
   }
 
-  const fetchData = async(urls) => {
+  const fetchData = async (urls) => {
     const results = await Promise.all(urls.map((url) => axios.get(url)));
     return results.map((res) = res.data);
   }
@@ -23,17 +23,18 @@ function MovieInfo() {
       try {
         setLoading(true);
         const response = await axios.get(
-           "https://swapi.dev/api/films/{$episode_id}" 
+           "https://swapi.dev/api/films" 
         );
         const Info = response.data;
 
-        const [characters, species, planets, starships, vehicles] = await Promise.all([
-          fetchData(Info.characters),
-          fetchData(Info.species),
-          fetchData(Info.planets),
-          fetchData(Info.starships),
-          fetchData(Info.vehicles),
-        ]);
+        const [characters, species, planets, starships, vehicles] = 
+          await Promise.all([
+            fetchData(Info.characters),
+            fetchData(Info.species),
+            fetchData(Info.planets),
+            fetchData(Info.starships),
+            fetchData(Info.vehicles),
+         ]);
 
         setContext({
           ...Info,
@@ -73,7 +74,7 @@ function MovieInfo() {
               <div>
                 <h3>Characters</h3>
                 <ul>
-                    {context.characters.map((character) => {
+                    {context.map((character) => {
                       <li key={character.url}>{character.name}</li>
                     })}
                 </ul>
@@ -81,7 +82,7 @@ function MovieInfo() {
               <div>
                <h3>Planets</h3>
                 <ul>
-                  {context.planets.map((planet) => {
+                  {context.map((planet) => {
                     <li key={planet.url}>{planet.name}</li>
                   })}
                 </ul>
@@ -89,7 +90,7 @@ function MovieInfo() {
               <div>
                <h3>Species</h3>
                 <ul>
-                  {context.species.map((specie) => {
+                  {context.map((specie) => {
                     <li key= {specie.url}>{specie.name}</li>
                   })}
                 </ul>
@@ -97,7 +98,7 @@ function MovieInfo() {
               <div>
                <h3>Starships</h3>
                 <ul>
-                  {context.starships.map((starship) => {
+                  {context.map((starship) => {
                     <li key={starship.url}>{starship.name}</li>
                   })}
                 </ul>
@@ -105,7 +106,7 @@ function MovieInfo() {
               <div>
                <h3>Planets</h3>
                 <ul>
-                  {context.vehicles.map((vehicle) => {
+                  {context.map((vehicle) => {
                     <li key={vehicle.url}>{vehicle.name}</li>
                   })}
                 </ul>
