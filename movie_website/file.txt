@@ -18,6 +18,15 @@ const [movies, setMovies] = useState([]);
 
     const API_URL = "https://swapi.dev/api/films"
 
+     LoadData();
+  }, [])
+  const LoadData = async () => {
+    await fetch("https://swapi.dev/api/films")
+    .then(response => response.json())
+    .then(data => setContext(data));
+  }
+
+
         <h1 className='title'> {title}</h1> 
         <p className='direct'><span>Director: {director}</span></p>
         <p className='producer'><span>Director: {producer}</span></p> 

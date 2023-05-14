@@ -14,13 +14,20 @@ function MovieInfo(title, director, producer, opening_crawl, Species, characters
   
 
   useEffect(() => {
-    LoadData();
+    const LoadInfo = async () => {
+        setLoading(true);
+
+        const response = await axios.get(
+           "https://swapi.dev/api/films" 
+        )
+
+        setContext(response.data)
+
+        setLoading(false);
+    }
+
+    LoadInfo();
   }, [])
-  const LoadData = async () => {
-    await fetch("https://swapi.dev/api/films/${episode_id}")
-    .then(response => response.json())
-    .then(data => setContext(data));
-  }
 
   return (
     <div className='container'>
