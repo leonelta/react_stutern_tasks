@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import MovieBox from './MovieBox';
+import MovieInfo from './MovieInfo';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {
+import { 
 	BrowserRouter as Router,
 	Routes,
 	Route,
 	Link
 } from 'react-router-dom';
+
 
 const API_URL = "https://swapi.dev/api/films";
 
@@ -71,6 +73,10 @@ function App() {
         <div className="grid">
            {movies.map((movieReq) => <MovieBox key={movieReq.episode_id} {...movieReq} />)}
         </div>
+        <Routes>
+          <Route path='/' element= {<MovieBox />} />
+          <Route path='/MovieInfo' element={<MovieInfo />} />
+        </Routes>
       </div>
     </Router>
   )

@@ -13,4 +13,28 @@ const [movies, setMovies] = useState([]);
       {movies.map((movieReq) => <MovieBox key={movieReq.episode_id} {...movieReq} />)}
     </div>
 
+    onst reponse = fetch(`https://swapi.dev/api/films/${episode_id}`).then((res) => res.json())
+    .then(data => setContext(data.results))
+
     const API_URL = "https://swapi.dev/api/films"
+
+        <h1 className='title'> {title}</h1> 
+        <p className='direct'><span>Director: {director}</span></p>
+        <p className='producer'><span>Director: {producer}</span></p> 
+        <h3>Description</h3>
+        <p>{opening_crawl}</p>    
+        <h3>Characters</h3>
+        <ul>
+            {context.characters.map(character => {
+              <li key={character.url}>{character.name}</li>
+            })}
+        </ul>
+        <h3>Planets</h3>
+        <ul>
+            {context.planets.map(character => {
+              <li key={character.url}>{character.name}</li>
+            })}
+        </ul>
+        <h3>Species</h3>
+        <h3>Starships</h3>
+        <h3>Vehicles</h3>
