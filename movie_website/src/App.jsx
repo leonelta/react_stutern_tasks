@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
+import Details from './details.json'
 import MovieBox from './MovieBox';
 import MovieInfo from './MovieInfo';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -10,21 +11,8 @@ import {
 	Link
 } from 'react-router-dom';
 
-
-const API_URL = "https://swapi.dev/api/films";
-
 function App() {
 
-  const [movies, setMovies] = useState([]);
-
-  useEffect(() => {
-    fetch(API_URL).then((res) => res.json())
-    .then(data => {
-      console.log(data)
-      setMovies(data.results);
-    })
-  }, [])
-  
   return (
     <Router>
       <div className="container">  
@@ -70,9 +58,6 @@ function App() {
           </g>
           </g>
         </svg>
-        <div className="grid">
-           {movies.map((movieReq) => <MovieBox key={movieReq.episode_id} {...movieReq} />)}
-        </div>
         <Routes>
           <Route path='/' element= {<MovieBox />} />
           <Route path='/MovieInfo' element={<MovieInfo />} />

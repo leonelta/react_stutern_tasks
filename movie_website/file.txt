@@ -26,24 +26,116 @@ const [movies, setMovies] = useState([]);
     .then(data => setContext(data));
   }
 
+  const fetchData = async (urls) => {
+    const results = await Promise.all(urls.map((url) => axios.get(url)));
+    return results.map((res) = res.data);
+  }
 
-        <h1 className='title'> {title}</h1> 
-        <p className='direct'><span>Director: {director}</span></p>
-        <p className='producer'><span>Director: {producer}</span></p> 
-        <h3>Description</h3>
-        <p>{opening_crawl}</p>    
-        <h3>Characters</h3>
-        <ul>
-            {context.characters.map(character => {
-              <li key={character.url}>{character.name}</li>
-            })}
-        </ul>
-        <h3>Planets</h3>
-        <ul>
-            {context.planets.map(character => {
-              <li key={character.url}>{character.name}</li>
-            })}
-        </ul>
-        <h3>Species</h3>
-        <h3>Starships</h3>
-        <h3>Vehicles</h3>
+  useEffect(() => {
+    const LoadInfo = async () => {
+      try {
+        setLoading(true);
+        const response = await axios.get(
+           "https://swapi.dev/api/films" 
+        );
+        const Info = response.data;
+
+        const [characters, species, planets, starships, vehicles] = 
+          await Promise.all([
+            fetchData(Info.characters),
+            fetchData(Info.species),
+            fetchData(Info.planets),
+            fetchData(Info.starships),
+            fetchData(Info.vehicles),
+         ]);
+
+        setContext({
+          ...Info,
+          characters,
+          species,
+          planets, 
+          starships, 
+          vehicles,
+        });
+        console.log(context);
+      } catch (err) {
+        console.error(err.message);
+        setContext(null);
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    LoadInfo();
+  }, [episode_id]);
+
+  const [context, setContext] = useState([]);
+  const [loading, setLoading] = useState(false);
+const { episode_id } = useParams();
+
+{
+        loading ? (
+           <h4>...</h4>
+        ) : (   <div className='head'>
+            <button onClick={navigateToMovieBox}> Back to List</button>
+              <h1 className='title'> {context.title}</h1> 
+              <p className='direct'><span>Director: {context.director}</span></p>
+              <p className='producer'><span>Director: {context.producer}</span></p> 
+              <div>
+                <h3>Description</h3>
+                <p>{context.opening_crawl}</p>
+              </div>
+              <div>
+                <h3>Characters</h3>
+                <ul>
+                    {context.map((character) => {
+                      <li key={character.url}>{character.name}</li>
+                    })}
+                </ul>
+              </div>
+              <div>
+               <h3>Planets</h3>
+                <ul>
+                  {context.map((planet) => {
+                    <li key={planet.url}>{planet.name}</li>
+                  })}
+                </ul>
+              </div>
+              <div>
+               <h3>Species</h3>
+                <ul>
+                  {context.map((specie) => {
+                    <li key= {specie.url}>{specie.name}</li>
+                  })}
+                </ul>
+              </div>
+              <div>
+               <h3>Starships</h3>
+                <ul>
+                  {context.map((starship) => {
+                    <li key={starship.url}>{starship.name}</li>
+                  })}
+                </ul>
+              </div>
+              <div>
+               <h3>Planets</h3>
+                <ul>
+                  {context.map((vehicle) => {
+                    <li key={vehicle.url}>{vehicle.name}</li>
+                  })}
+                </ul>
+              </div>
+           </div>)
+      }
+
+      <Card className="movie" style={{ width: '24rem' }}>
+      <Card.Body className="all">
+        <Card.Title className='title'>{title}</Card.Title>
+        <Card.Subtitle className="mb-2 text-muted">{release_date}</Card.Subtitle>
+        <Card.Text className="text">
+          {opening_crawl}
+        </Card.Text>
+        <hr className='line'></hr>
+        <button onClick={navigateToMovieInfo}> More infos</button>
+      </Card.Body>
+    </Card>    
