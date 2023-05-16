@@ -17,7 +17,7 @@ function MovieInfo() {
         return (
           <div className="head" key={ movie.id }>
             <button onClick={navigateToMovieBox}> Back to List</button>
-            <h1 className="title"> {movie.title}</h1>
+            <h1 className="title1"> {movie.title}</h1>
             <p className="direct">
               <span>Director: { movie.director }</span>
             </p>

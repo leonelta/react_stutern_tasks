@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import { useNavigate } from 'react-router';
 import './MovieBox.css';
+
 import Details from './details.json';
 import 'bootstrap/dist/css/bootstrap.min.css';
 

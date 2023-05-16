@@ -59,7 +59,7 @@ function App() {
           </g>
         </svg>
         <Routes>
-          <Route path='/' element= {<MovieBox />} />
+          <Route path='/' element= {<MovieBox />}  />
           <Route path='/MovieInfo' element={<MovieInfo />} />
         </Routes>
       </div>
