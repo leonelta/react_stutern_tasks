@@ -13,7 +13,7 @@ function MovieInfo() {
 
   return (
     <div className="container">
-      {Details.map((movie) => {
+      {Details &&Details.map((movie) => {
         return (
           <div className="head" key={ movie.id }>
             <button onClick={navigateToMovieBox}> Back to List</button>
@@ -27,6 +27,71 @@ function MovieInfo() {
             <div className="descrip">
               <h3>Description</h3>
               <p>{ movie.opening_crawl }</p>
+            </div>
+            <hr></hr>
+            <div className="character">
+              <h3>Characters</h3>
+              <ul>
+                {movie.characters && movie.characters.map((name, index) => {
+                  return(
+                    <ul>
+                      <li key={ index }>{ name }</li>
+                    </ul>
+                  )
+                })}
+              </ul>
+            </div>
+            <hr></hr>
+            <div className="planet">
+              <h3>Planets</h3>
+              <ul>
+                {movie.planets && movie.planets.map((name, index) => {
+                  return(
+                    <ul>
+                      <li key={ index }>{ name }</li>
+                    </ul>
+                  )
+                })}
+              </ul>
+            </div>
+            <hr></hr>
+            <div className="species">
+              <h3>Species</h3>
+              <ul>
+                {movie.species && movie.species.map((name, index) => {
+                  return(
+                    <ul>
+                      <li key={ index }>{ name }</li>
+                    </ul>
+                  )
+                })}
+              </ul>
+            </div>
+            <hr></hr>
+            <div className="starships">
+              <h3>Starships</h3>
+              <ul>
+                {movie.starships && movie.starships.map((name, index) => {
+                  return(
+                    <ul>
+                      <li key={ index }>{ name }</li>
+                    </ul>
+                  )
+                })}
+              </ul>
+            </div>
+            <hr></hr>
+            <div className="vehicles">
+              <h3>Vehicles</h3>
+              <ul>
+                {movie.vehicles && movie.vehicles.map((name, index) => {
+                  return(
+                    <ul>
+                      <li key={ index }>{ name }</li>
+                    </ul>
+                  )
+                })}
+              </ul>
             </div>
           </div>
         );

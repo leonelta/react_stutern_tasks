@@ -18,7 +18,7 @@ function MovieBox() {
   return (
     <div className='grid'>
       {
-        Details.map( detail => {
+        Details && Details.map( detail => {
           return (
             <Card className="movie" style={{ width: '24rem' }} key={ detail.id }>
               <Card.Body className="all">
