@@ -1,0 +1,27 @@
+.head{
+    margin: 4rem 15rem 4rem 12rem;
+    
+}
+
+button{
+    font-size: 20px;
+    border: 1px solid red;
+    padding: 25px;
+    margin-bottom: 1.5rem;
+}
+
+.title{
+    padding: 1rem 6rem;
+    font-size: 4rem;
+}
+
+.direct, .producer{
+    color: #fff;
+    font-size: 1.4rem;
+}
+
+.descrip{
+    color: #fff;
+    font-size: 1.4rem;
+}
+
